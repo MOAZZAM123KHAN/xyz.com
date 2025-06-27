@@ -98,7 +98,7 @@ Message: ${formData.message}
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="apartment">Apartment</SelectItem>
-                <SelectItem value="villa">Villa</SelectItem>
+                {/* <SelectItem value="villa">Villa</SelectItem> */}
                 <SelectItem value="commercial">Commercial</SelectItem>
                 <SelectItem value="plot">Plot</SelectItem>
               </SelectContent>
@@ -109,10 +109,10 @@ Message: ${formData.message}
                 <SelectValue placeholder="Budget Range" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="under-50-lakhs">Under ₹50 Lakhs</SelectItem>
-                <SelectItem value="50-lakhs-to-1-crore">₹50 Lakhs - ₹1 Crore</SelectItem>
-                <SelectItem value="1-crore-to-2-crores">₹1 Crore - ₹2 Crores</SelectItem>
-                <SelectItem value="above-2-crores">Above ₹2 Crores</SelectItem>
+                <SelectItem value="under-50-lakhs">Under ₹20 Lakhs</SelectItem>
+                <SelectItem value="50-lakhs-to-1-crore">₹20 Lakhs - ₹50 Crore</SelectItem>
+                <SelectItem value="1-crore-to-2-crores">₹50 Crore - ₹1 Crores</SelectItem>
+                
               </SelectContent>
             </Select>
           </div>

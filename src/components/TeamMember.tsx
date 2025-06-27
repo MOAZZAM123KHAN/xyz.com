@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from 'lucide-react';
@@ -35,7 +34,7 @@ const TeamMember = ({ member }: TeamMemberProps) => {
         <img 
           src={member.image} 
           alt={member.name}
-          className="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+          className="w-60 h-60 object-cover object-center rounded-xl mx-auto mt-2 mb-4 shadow-md"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <div className="absolute bottom-4 left-4 text-white">
@@ -52,39 +51,28 @@ const TeamMember = ({ member }: TeamMemberProps) => {
         <p className="text-red-600 font-medium mb-4">
           {member.role}
         </p>
-        
-        <div className="flex justify-center space-x-2 mb-4">
-          <Button 
-            size="sm" 
-            variant="outline"
-            onClick={handleCall}
-            className="border-red-600 text-red-600 hover:bg-red-50"
-          >
-            <Phone className="w-4 h-4 mr-1" />
-            Call
-          </Button>
-          <Button 
-            size="sm" 
-            variant="outline"
-            onClick={handleEmail}
-            className="border-red-600 text-red-600 hover:bg-red-50"
-          >
-            <Mail className="w-4 h-4 mr-1" />
-            Email
-          </Button>
-        </div>
-
-        <Button 
-          className="w-full bg-red-600 hover:bg-red-700"
-          onClick={handleWhatsApp}
-        >
-          WhatsApp
-        </Button>
-
-        <div className="mt-4 text-sm text-gray-600">
-          <div>{member.phone}</div>
-          <div>{member.email}</div>
-        </div>
+        {!(member.role && member.role.toLowerCase().includes('ceo')) && member.phone && (
+          <div className="flex flex-col gap-2 items-center">
+            <Button 
+              className="w-full bg-red-600 hover:bg-red-700"
+              onClick={() => {
+                const message = `Hi ${member.name}, I would like to discuss property requirements.`;
+                const whatsappUrl = `https://wa.me/${member.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+              }}
+            >
+              WhatsApp
+            </Button>
+            <Button
+              className="border-red-600 text-red-600 hover:bg-red-50"
+              onClick={() => {
+                window.open(`tel:${member.phone}`, '_self');
+              }}
+            >
+              Call
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

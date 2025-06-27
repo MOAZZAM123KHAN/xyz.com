@@ -91,42 +91,32 @@ const Index = () => {
     {
       name: "Sanjeev Singh",
       role: "Founder & CEO",
-      phone: "+91 98765 43210",
-      email: "sanjeev@saipadma.com",
       image: "/lovable-uploads/54ff863f-05c8-40f0-b70a-32a7f4d24aba.png.",
-      experience: "15+ Years"
+     
     },
     {
       name: "Ankur Pimple",
-      role: "Senior Property Consultant",
-      phone: "+91 98765 43211",
-      email: "ankur@saipadma.com",
+      phone: "7738119985",
       image: "/lovable-uploads/ab09c4fc-bda9-4e67-aa6f-e4f2e8025c78.png",
-      experience: "15+ Years"
+     
     },
     {
       name: "Pravin Thakur",
-      role: "Commercial Properties Head",
-      phone: "+91 98765 43212",
-      email: "pravin@saipadma.com",
+      phone: "9175292633",
       image: "/lovable-uploads/ea3a7689-b46c-4f5d-99f3-57152057f3d0.png",
-      experience: "15+ Years"
+      
     },
     {
       name: "Kamana Jha",
-      role: "Sales Expert",
-      phone: "",
-      email: "",
-      image: "/lovable-uploads/kamna jha.png",
-      experience: "10+ Years"
+       phone: "9175292603",
+       image: "/lovable-uploads/kamna jha.png",
+      
     },
     {
       name: "KP Yadav",
-      role: "CEO",
-      phone: "",
-      email: "",
+      phone: "9175126610",
       image: "/lovable-uploads/Kp Yadav.png",
-      experience: "15+ Years"
+     
     }
   ];
 
@@ -168,9 +158,9 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/0f6dccc0-d60c-42ef-a0cd-12bd59b751bd.png" 
-                alt="Sai Padma Logo" 
-                className="h-10 w-auto"
+                src="/lovable-uploads/sr-builders-logo.png" 
+                alt="SR Builders & Developers " 
+                className="h-16 w-auto drop-shadow-lg bg-white rounded-lg p-1"
               />
               <div className="text-2xl font-bold text-red-600">SR Builders & Developers</div>
             </div>
@@ -254,13 +244,7 @@ const Index = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button 
-              size="lg" 
-              className="bg-red-600 hover:bg-red-700"
-              onClick={() => scrollToSection('properties')}
-            >
-              View All Properties
-            </Button>
+            {/* Removed View All Properties button */}
           </div>
         </div>
       </section>
@@ -429,13 +413,13 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  src="/lovable-uploads/0f6dccc0-d60c-42ef-a0cd-12bd59b751bd.png" 
-                  alt="SR Developers Logo" 
-                  className="h-8 w-auto"
+                  src="/lovable-uploads/sr-builders-logo.png" 
+                  alt="SR Builders & Developers" 
+                  className="h-12 w-auto drop-shadow-lg bg-white rounded-lg p-1"
                 />
-                <h3 className="text-xl font-bold text-red-400">SR Developers</h3>
+                <h3 className="text-xl font-bold text-red-400">SR Builders & Developers</h3>
               </div>
-              <p className="text-gray-300 mb-4">Your trusted real estate partner in Hyderabad.</p>
+              <p className="text-gray-300 mb-4">Your trusted real estate partner in Palghar , Maharastra </p>
               <div className="flex space-x-4">
                 <Button size="sm" variant="outline" className="text-white border-blue-600 bg-blue-600 hover:bg-blue-800">
                   Facebook
