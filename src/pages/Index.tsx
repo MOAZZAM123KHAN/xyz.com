@@ -23,51 +23,73 @@ const Index = () => {
       id: 1,
       title: "Sai Padma Nagar - Premium Apartments",
       price: "₹45 Lakh onwards",
-      location: "Sai Padma Nagar, Hyderabad",
+      location: "Sai Padma Nagar, Palghar",
       bhk: "2 & 3 BHK",
       area: "1200-1800 sq ft",
       type: "Apartment",
-      image: "/lovable-uploads/c4f5c495-ff03-4427-ac0a-1aa2f7857cae.png",
+      image: "/lovable-uploads/image5.jpeg",
       features: ["Gated Community", "Swimming Pool", "Gym", "Kids Play Area", "24/7 Security"]
     },
     {
       id: 2,
-      title: "Modern Residential Complex",
-      price: "₹38 Lakh onwards",
-      location: "HITEC City, Hyderabad",
+      title: "Samriddhi realty",
+      price: "₹30 Lakh onwards",
+      location: "Sai Padma Nagar, Palghar",
       bhk: "2 & 3 BHK",
       area: "1100-1600 sq ft",
       type: "Apartment",
-      image: "/lovable-uploads/7b1c2a67-65bb-43c4-b2df-037528713e3b.png",
+      image: "/lovable-uploads/image4.jpeg",
       features: ["Premium Finishes", "Covered Parking", "Power Backup", "Lift"]
     },
     {
       id: 3,
       title: "Luxury Apartment Complex",
       price: "₹52 Lakh onwards",
-      location: "Jubilee Hills, Hyderabad",
+      location: "Sai Padma Nagar, Palghar",
       bhk: "2, 3 & 4 BHK",
       area: "1400-2200 sq ft",
       type: "Apartment",
-      image: "/lovable-uploads/24ac21b6-280a-4b14-aaf8-82b24af56fa4.png",
+      image: "/lovable-uploads/image3.jpeg",
       features: ["Club House", "Garden", "Intercom", "Vastu Compliant"]
     },
     {
       id: 4,
       title: "Premium Gated Community",
       price: "₹42 Lakh onwards",
-      location: "Madhapur, Hyderabad",
+      location: "Sai Padma Nagar, Palghar",
       bhk: "2 & 3 BHK",
+      area: "1250-1750 sq ft",
+      type: "Apartment",
+      image: "/lovable-uploads/image1.jpeg",
+      features: ["Earthquake Resistant", "Rain Water Harvesting", "Solar Panels", "Green Building"]
+    },
+    {
+      id: 5,
+      title: "Premium Gated Community",
+      price: "₹20-30 Lakh onwards",
+      location: "Sai Padma Nagar, Palghar",
+      bhk: "1 BHK",
       area: "1250-1750 sq ft",
       type: "Apartment",
       image: "/lovable-uploads/58730309-7b9e-4ae4-9080-ee3280c95888.png",
       features: ["Earthquake Resistant", "Rain Water Harvesting", "Solar Panels", "Green Building"]
     },
     {
-      id: 5,
+      id: 6,
       title: "Elite Residential Project",
       price: "₹48 Lakh onwards",
-      location: "Kondapur, Hyderabad",
+      location: "Sai Padma Nagar, Palghar",
+      bhk: "2, 3 & 4 BHK",
+      area: "1300-2000 sq ft",
+      type: "Apartment",
+      image: "/lovable-uploads/image2.jpeg",
+      features: ["Landscaped Gardens", "Community Hall", "Jogging Track", "CCTV Surveillance"]
+    },
+    {
+      id: 7,
+      title: "Elite Residential Project",
+      price: "₹48 Lakh onwards",
+      location: "Sai Padma Nagar, Palghar",
       bhk: "2, 3 & 4 BHK",
       area: "1300-2000 sq ft",
       type: "Apartment",
@@ -75,16 +97,27 @@ const Index = () => {
       features: ["Landscaped Gardens", "Community Hall", "Jogging Track", "CCTV Surveillance"]
     },
     {
-      id: 6,
+      id: 8,
       title: "Luxury Living Apartments",
       price: "₹46 Lakh onwards",
-      location: "Gachibowli, Hyderabad",
+      location: "Sai Padma Nagar, Palghar",
       bhk: "2 & 3 BHK",
       area: "1150-1650 sq ft",
       type: "Apartment",
       image: "/lovable-uploads/62929d7b-4152-43d3-b57d-332297c78d89.png",
       features: ["Modern Architecture", "Visitor Parking", "Maintenance Staff", "Piped Gas"]
-    }
+    },
+    {
+      id: 9,
+      title: "Luxury Living Apartments",
+      price: "₹46 Lakh onwards",
+      location: "Sai Padma Nagar, Palghar",
+      bhk: "2 & 3 BHK",
+      area: "1150-1650 sq ft",
+      type: "Apartment",
+    image:"/lovable-uploads/image6.jpeg",
+    features: ["Modern Architecture", "Visitor Parking", "Maintenance Staff", "Piped Gas"]
+    },
   ];
 
   const teamMembers = [
@@ -218,7 +251,8 @@ const Index = () => {
             </div>
             <div className="relative">
               <img 
-                src="/lovable-uploads/969ce648-9c92-4768-a2fc-706293323a7d.png"
+                // src="/lovable-uploads/969ce648-9c92-4768-a2fc-706293323a7d.png"
+                 src="/lovable-uploads/image 7.jpeg"
                 alt="Luxury Property Development"
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />
@@ -239,16 +273,21 @@ const Index = () => {
             <p className="text-xl text-gray-600">Handpicked premium properties for discerning buyers</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProperties.slice(0, 3).map((property) => (
-              <PropertyCard key={property.id} property={property} />
-            ))}
+            {/* {featuredProperties.slice(0, 2).map((property) => (
+              <PropertyCard key={property.id } property={property} />
+            ))} */}
+            {featuredProperties
+  .filter(property => [1, 2, 3].includes(property.id))  // ✅ Only id 1, 2, 3
+  .map((property) => (
+    <PropertyCard key={property.id} property={property} />
+))}
           </div>
           <div className="text-center mt-12">
             {/* Removed View All Properties button */}
           </div>
         </div>
       </section>
-
+{/* 
       {/* Properties Section */}
       <section id="properties" className="py-16">
         <div className="container mx-auto px-4">
@@ -260,14 +299,19 @@ const Index = () => {
           <PropertyFilter onFilter={setFilteredProperties} properties={featuredProperties} />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            {(filteredProperties.length > 0 ? filteredProperties : featuredProperties).map((property) => (
+            {/* {(filteredProperties.length > 0 ? filteredProperties : featuredProperties).map((property) => (
               <PropertyCard key={property.id} property={property} />
-            ))}
+            ))} */}
+            {(filteredProperties.length > 0 ? filteredProperties : featuredProperties)
+  .filter(property => property.id >= 4)  // Only id >= 4
+  .map((property) => (
+    <PropertyCard key={property.id} property={property} />
+))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      About Section
       <section id="about" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -306,16 +350,25 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1466442929976-97f336a657be?w=600&h=400&fit=crop"
+            <div className="relative"> 
+              {/* <img 
+                src="/lovable-uploads/VID-20250627-WA0041.mp4"
                 alt="About SR Developers & Builders"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
-              />
-              <Button className="absolute bottom-6 left-6 bg-white/90 text-red-600 hover:bg-white">
-                <Play className="w-5 h-5 mr-2" />
-                Watch Video
-              </Button>
+              /> */}
+           <video
+  controls
+  className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
+>
+  <source src="/lovable-uploads/VID-20250627-WA0041.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+
+               {/* <Button className="absolute bottom-6 left-6 bg-white/90 text-red-600 hover:bg-white">
+                 <Play className="w-5 h-5 mr-2" />
+               Watch Video
+             </Button> */}
             </div>
           </div>
         </div>
